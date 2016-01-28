@@ -1,6 +1,6 @@
 class CreatePameStatisticsTable < ActiveRecord::Migration
   def change
-    create_table :pame_statistics_tables do |t|
+    create_table :pame_statistics do |t|
       t.belongs_to :country
       t.integer    :assessments
       t.integer    :assessed_pas
@@ -8,5 +8,7 @@ class CreatePameStatisticsTable < ActiveRecord::Migration
       t.float      :total_area_assessed
       t.float      :percentage_area_assessed
     end
+
+    add_index :pame_statistics, :country_id, unique: true
   end
 end
