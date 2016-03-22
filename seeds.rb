@@ -28,7 +28,6 @@ csv_models.each do |model|
     CSV.foreach(source, headers: true) do |row|
       attributes = row.to_hash
       if model == Country
-        p attributes["region"]
         attributes["region_id"] = Region.where(name: attributes.delete("region")).select(:id).first.id
       end
 
