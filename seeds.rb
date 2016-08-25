@@ -72,3 +72,6 @@ csv_models.each do |model|
     end
   end
 end
+
+# Import country statistics and PAME statistics
+Stats::CountryStatisticsImporter.import
