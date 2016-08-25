@@ -7,10 +7,23 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 
+
+# Import legacy protected areas
+###############################
+source = File.join(Rails.root, 'lib', 'data', 'seeds', 'legacy_protected_areas.sql')
+config = ActiveRecord::Base.connection_config
+command = []
+
+command << "PGPASSWORD=#{config[:password]}" if config[:password].present?
+command << %Q(psql -d #{config[:database]} -U #{config[:username]} -h #{config[:host]} < #{source.to_s})
+
+system(command.join(" "))
+
+# Import models
+###############
 csv_models = [
   Jurisdiction, Governance,
-  IucnCategory, Region, Country, SubLocation,
-  LegacyProtectedArea
+  IucnCategory, Region, Country, SubLocation
 ]
 
 csv_models.each do |model|
@@ -47,7 +60,7 @@ csv_models.each do |model|
       if model.create(attributes)
         import_count += 1
       else
-        failed_seeds << attributes
+        failed_seevs << attributes
       end
     end
 
