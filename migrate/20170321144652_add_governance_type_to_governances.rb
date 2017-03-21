@@ -18,7 +18,8 @@ class AddGovernanceTypeToGovernances < ActiveRecord::Migration
     }
 
     governances.each_pair { |k,v|
-      Governance.where(name: k).first.update_attributes(governance_type: v)
+      governance = Governance.where(name: k).first
+      governance.update_attributes(governance_type: v) if governance.present?
     }
   end
 end
