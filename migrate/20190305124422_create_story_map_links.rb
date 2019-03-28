@@ -1,7 +1,7 @@
 class CreateStoryMapLinks < ActiveRecord::Migration
   def change
     create_table :story_map_links do |t|
-      t.integer :wdpa_id
+      t.references :protected_area
       t.string :link
 
       t.timestamps
