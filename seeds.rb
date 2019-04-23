@@ -75,3 +75,9 @@ end
 
 # Import country statistics and PAME statistics
 Stats::CountryStatisticsImporter.import
+
+# Add restricted Protected Area
+ProtectedArea.where(name: "Restricted", original_name: "Restricted").first_or_create do |pa|
+  pa.name = "Restricted"
+  pa.original_name = "Restricted"
+end
