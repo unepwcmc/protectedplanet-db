@@ -1,5 +1,5 @@
-class AddVisibleToPameEvaluations < ActiveRecord::Migration[5.0]
+class AddVisibleToPameEvaluations < ActiveRecord::Migration
   def change
-    add_column :pame_evaluations, :visible, :bool
+    add_column :pame_evaluations, :visible, :bool, null: false, default: false
   end
 end
