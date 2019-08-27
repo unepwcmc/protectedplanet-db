@@ -1,7 +1,7 @@
 class CreateAichi11Targets < ActiveRecord::Migration
   def change
     create_table :aichi11_targets do |t|
-      t.integer :country_id
+      t.integer :singleton_guard, default: 0, null: false
 
       t.float :coverage_terrestrial
       t.float :coverage_marine
@@ -16,5 +16,6 @@ class CreateAichi11Targets < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :aichi11_targets, :singleton_guard, :unique => true
   end
 end
