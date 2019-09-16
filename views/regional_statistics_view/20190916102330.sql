@@ -1,6 +1,6 @@
 SELECT region_id, land_area, eez_area, ts_area,
   (COALESCE(pa_land_area,0) + COALESCE(pa_marine_area,0)) AS pa_area,
-  pa_land_area, pa_marine_area, pa_eez_area, pa_ts_area,
+  pa_land_area, pa_marine_area, pa_eez_area, pa_ts_area, jrc_regional_area,
   ((COALESCE(pa_land_area,0) + COALESCE(pa_marine_area,0)) /
     (land_area + COALESCE(eez_area, 0) + COALESCE(ts_area,0))*100) AS percentage_pa_cover,
   (COALESCE(pa_land_area,0) / land_area * 100) AS percentage_pa_land_cover,
