@@ -1,4 +1,5 @@
 SELECT c.id,
+  c.region_id AS region_id,
   name,
   iso_3 AS iso,
   COALESCE(percentage_pa_land_cover,0) AS percentage_pa_land_cover,
@@ -15,6 +16,7 @@ LEFT JOIN pame_statistics ps ON ps.country_id = c.id
 UNION
 
 SELECT region_id AS id,
+  region_id AS region_id,
   r.name,
   r.iso AS iso,
   percentage_pa_land_cover,
