@@ -1,6 +1,6 @@
 SELECT c.id,
   name,
-  iso_3,
+  iso_3 AS iso,
   COALESCE(percentage_pa_land_cover,0) AS percentage_pa_land_cover,
   COALESCE(percentage_pa_marine_cover,0) AS percentage_pa_marine_cover,
   COALESCE(percentage_well_connected,0) AS percentage_well_connected,
@@ -16,7 +16,7 @@ UNION
 
 SELECT region_id AS id,
   r.name,
-  r.iso,
+  r.iso AS iso,
   percentage_pa_land_cover,
   percentage_pa_marine_cover,
   percentage_well_connected,
