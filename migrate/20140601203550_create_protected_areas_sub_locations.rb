@@ -1,4 +1,4 @@
-class CreateProtectedAreasSubLocations < ActiveRecord::Migration
+class CreateProtectedAreasSubLocations < ActiveRecord::Migration[4.2]
   def change
     create_table :protected_areas_sub_locations, :id => false do |t|
       t.references :protected_area
