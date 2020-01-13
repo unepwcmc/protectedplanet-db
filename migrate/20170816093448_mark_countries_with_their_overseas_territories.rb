@@ -1,4 +1,4 @@
-class MarkCountriesWithTheirOverseasTerritories < ActiveRecord::Migration
+class MarkCountriesWithTheirOverseasTerritories < ActiveRecord::Migration[4.2]
   def change
     overseas_territories = {
       "AUS" => ["CCK", "CXR", "NFK", "HMD"],

@@ -1,4 +1,4 @@
-class AddProtectedAreaSourceJoinTable < ActiveRecord::Migration
+class AddProtectedAreaSourceJoinTable < ActiveRecord::Migration[4.2]
   def change
     create_table :protected_areas_sources, :id => false do |t|
       t.references :protected_area
