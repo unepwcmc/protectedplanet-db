@@ -2,8 +2,14 @@
 ---
 label: Marine
 app_layout: application
-position: 0
+position: 13
 
 [content]
-{{ cms:text title }}
-{{ cms:text introduction }}
+{{ cms:partial layouts/cms/marine }}
+{{ cms:text social-title, render: false }}
+{{ cms:text social-description, render: false }}
+{{ cms:text introduction, render: false }}
+[js]
+
+[css]
+

@@ -5,4 +5,10 @@ app_layout: application
 position: 0
 
 [content]
-{{ cms:text title }}
+{{ cms:partial layouts/cms/thematic-areas }}
+{{ cms:text social-title, render: false }}
+{{ cms:text social-description, render: false }}
+[js]
+
+[css]
+
