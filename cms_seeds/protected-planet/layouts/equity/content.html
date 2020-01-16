@@ -5,10 +5,6 @@ app_layout: application
 position: 4
 
 [content]
-{{ cms:text title }}
-{{ cms:text introduction }}
-{{ cms:wysiwyg  content }}
-[js]
-
-[css]
-
+{{ cms:partial layouts/cms/equity }}
+{{ cms:text introduction, render: false }}
+{{ cms:wysiwyg content, render: false }}
