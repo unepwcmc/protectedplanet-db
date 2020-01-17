@@ -5,6 +5,10 @@ app_layout: application
 position: 20
 
 [content]
+{{ cms:text summary, render: false }}
+{{ cms:text social-title, render: false }}
+{{ cms:text social-description, render: false }}
+
 <div class="container--profile container--push-bottom container--right-padded">
   <nav class="breadcrumbs">
     {{ cms:partial cms/breadcrumbs }}

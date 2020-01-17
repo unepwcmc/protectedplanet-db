@@ -5,7 +5,9 @@ app_layout: application
 position: 1
 
 [content]
-{{ cms:text title }}
+{{ cms:text summary, render: false }}
+{{ cms:text social-title, render: false }}
+{{ cms:text social-description, render: false }}
 [js]
 
 [css]
