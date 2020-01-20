@@ -1,0 +1,41 @@
+[attributes]
+---
+label: Page - Green List
+app_layout: application
+position: 20
+
+[content]
+{{ cms:text summary, render: false }}
+{{ cms:text social-title, render: false }}
+{{ cms:text social-description, render: false }}
+
+<div class="container--profile container--push-bottom container--right-padded">
+  <nav class="breadcrumbs">
+    {{ cms:partial cms/breadcrumbs }}
+  </nav>
+
+  <main>
+	{{ cms:partial cms/title_with_logo }}
+    <aside class="one-fourths">
+      {{ cms:partial cms/children_nav }}
+      
+      <a class="big-button" href="/search?is_green_list=true">
+        <i class="fa fa-search big-button__icon"></i> Explore Green List sites
+      </a>
+    </aside>
+
+    <article class="three-fourths article">
+      <div class="s-article">
+        {{ cms:wysiwyg content }}
+      </div>
+    </article>
+  </main>
+</div>
+
+
+[js]
+
+
+[css]
+
+
