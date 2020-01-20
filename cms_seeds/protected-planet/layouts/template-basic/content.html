@@ -5,9 +5,9 @@ app_layout: application
 position: 3
 
 [content]
-{{ cms:text title }}
-{{ cms:text introduction }}
-{{ cms:wysiwyg content }}
+{{ cms:partial layouts/cms/basic }}
+{{ cms:text introduction, render: false }}
+{{ cms:wysiwyg content, render: false }}
 [js]
 
 [css]
