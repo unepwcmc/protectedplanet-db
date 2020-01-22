@@ -6,6 +6,9 @@ position: 3
 
 [content]
 {{ cms:partial layouts/cms/basic }}
+{{ cms:date published_date, render: false }}
+{{ cms:text social-title, render: false }}
+{{ cms:text social-description, render: false }}
 {{ cms:text summary, render: false }}
 {{ cms:file image, render: false }}
 {{ cms:wysiwyg content, render: false }}
