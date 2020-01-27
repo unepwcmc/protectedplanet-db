@@ -6,5 +6,10 @@ position: 4
 
 [content]
 {{ cms:partial layouts/cms/equity }}
-{{ cms:text_not_null summary, render: false }}
+{{ cms:text summary, render: false, required: true }}
 {{ cms:wysiwyg content, render: false }}
+
+[js]
+
+[css]
+

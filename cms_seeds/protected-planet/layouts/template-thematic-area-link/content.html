@@ -6,8 +6,13 @@ position: 24
 
 [content]
 {{ cms:partial layouts/cms/thematic-area-link }}
-{{ cms:text_not_null summary, render: false }}
+{{ cms:text summary, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
 {{ cms:text link, render: false }}
+
+
+[js]
+
+[css]
 

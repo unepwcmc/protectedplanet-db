@@ -5,10 +5,13 @@ app_layout: application
 position: 12
 
 [content]
-{{ cms:text_not_null summary, render: false }}
+{{ cms:text summary, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
+
 [js]
 
+
 [css]
+
 

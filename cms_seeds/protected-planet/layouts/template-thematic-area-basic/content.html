@@ -6,11 +6,14 @@ position: 11
 
 [content]
 {{ cms:partial layouts/cms/thematic-areas-basic }}
-{{ cms:text_not_null summary, render: false }}
+{{ cms:text summary, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
 {{ cms:wysiwyg content, render: false }}
+
 [js]
 
+
 [css]
+
 
