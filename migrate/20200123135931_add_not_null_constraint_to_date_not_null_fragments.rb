@@ -1,4 +1,4 @@
-class AddNotNullConstraintToDateNotNullAndTextNotNullFragments < ActiveRecord::Migration[5.2]
+class AddNotNullConstraintToDateNotNullFragments < ActiveRecord::Migration[5.2]
   def up
     ActiveRecord::Base.connection.execute(
       <<-SQL
@@ -12,13 +12,6 @@ class AddNotNullConstraintToDateNotNullAndTextNotNullFragments < ActiveRecord::M
         ADD CONSTRAINT date_not_null CHECK (
           NOT ( tag = 'date_not_null' AND datetime IS NULL )
         );
-
-        -- Make sure there are no text_not_null fragments with empty content.
-        -- Also manage strange case where the string representation is messed up
-        ALTER TABLE comfy_cms_fragments
-        ADD CONSTRAINT text_not_null CHECK (
-          NOT ( tag = 'text_not_null' AND ( COALESCE(TRIM(content), '') = '' OR TRIM(content) LIKE '%--- ''%' ) )
-        );
       SQL
     )
   end
@@ -28,7 +21,6 @@ class AddNotNullConstraintToDateNotNullAndTextNotNullFragments < ActiveRecord::M
       <<-SQL
         ALTER TABLE comfy_cms_fragments
         DROP CONSTRAINT date_not_null,
-        DROP CONSTRAINT text_not_null
       SQL
     )
   end
