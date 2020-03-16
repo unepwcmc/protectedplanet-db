@@ -2,12 +2,13 @@
 ---
 label: Page - Green List
 app_layout: application
-position: 20
+position: 11
 
 [content]
 {{ cms:text summary, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
+{{ cms:file theme_image, render:false }}
 
 <div class="container--profile container--push-bottom container--right-padded">
   <nav class="breadcrumbs">
@@ -34,11 +35,14 @@ position: 20
 
 
 
+
 [js]
 
 
 
+
 [css]
+
 
 
 

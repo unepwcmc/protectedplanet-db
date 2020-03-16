@@ -2,18 +2,22 @@
 ---
 label: Template - Thematic area - Basic
 app_layout: application
-position: 11
+position: 13
 
 [content]
 {{ cms:partial layouts/cms/thematic-areas-basic }}
 {{ cms:text summary, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
+{{ cms:file theme_image, render:false }}
 {{ cms:wysiwyg content, render: false }}
+
 
 [js]
 
 
+
 [css]
+
 
 

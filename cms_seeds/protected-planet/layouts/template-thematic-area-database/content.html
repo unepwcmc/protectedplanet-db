@@ -2,12 +2,13 @@
 ---
 label: Template - Thematic Area - Database
 app_layout: application
-position: 12
+position: 14
 
 [content]
 {{ cms:text summary, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
+{{ cms:file theme_image, render:false }}
 {{ cms:text button-download, render: false, required: true }}
 {{ cms:text button-search, render: false, required: true }}
 
@@ -18,9 +19,12 @@ position: 12
 {{ cms:text tab-content-2, render: false }}
 {{ cms:text tab-content-3, render: false }}
 
+
 [js]
 
 
+
 [css]
+
 
 
