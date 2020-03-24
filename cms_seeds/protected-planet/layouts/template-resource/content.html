@@ -5,17 +5,15 @@ app_layout: application
 position: 10
 
 [content]
-{{ cms:partial layouts/cms/resource }}
+{{ cms:date published_date, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
+{{ cms:text summary, render: false, required: true }}
 {{ cms:wysiwyg content, render: false }}
 
 
 [js]
 
-
-
 [css]
-
-
+[css]
 
