@@ -63,3 +63,27 @@ end
 
 # Import country statistics and PAME statistics
 Stats::CountryStatisticsImporter.import
+
+# Create Call To Actions CMS components
+CTAS = {
+  api: {
+    css_class: 'api',
+    title: 'API',
+    summary: 'API Summary',
+    url: 'https://api.protectedplanet.net',
+    updated: false
+  },
+  live_report: {
+    css_class: 'live-report',
+    title: 'Live Report',
+    summary: 'Live Report Summary',
+    url: 'https://livereport.protectedplanet.net',
+    updated: false
+  }
+}.freeze
+
+CTAS.each do |key, hash|
+  puts "Creating #{key} CTA..."
+  cta = CallToAction.find_by_css_class(hash[:css_class])
+  cta || CallToAction.create(hash)
+end
