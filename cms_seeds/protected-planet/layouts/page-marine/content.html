@@ -5,9 +5,11 @@ app_layout: application
 position: 6
 
 [content]
-{{ cms:text summary, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
+{{ cms:text summary, render: false, required: true }}
+{{ cms:text hero_small_text, render: false, required: true }}
+{{ cms:text hero_small_text_url, render: false, required: true }}
 {{ cms:file theme_image, render:false }}
 {{ cms:text section_distribution_title }}
 {{ cms:wysiwyg section_distribution_content }}
