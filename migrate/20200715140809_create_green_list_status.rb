@@ -8,6 +8,6 @@ class CreateGreenListStatus < ActiveRecord::Migration[5.2]
     end
 
     add_reference :protected_areas, :green_list_status, foreign_key: true
-    remove_column :protected_areas, :is_green_list
+    remove_column :protected_areas, :is_green_list, :boolean
   end
 end
