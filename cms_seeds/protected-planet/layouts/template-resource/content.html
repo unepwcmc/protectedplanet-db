@@ -5,6 +5,7 @@ app_layout: application
 position: 10
 
 [content]
+{{ cms:partial layouts/cms/resources }}
 {{ cms:date published_date, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
