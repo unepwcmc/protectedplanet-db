@@ -6,8 +6,11 @@ position: 10
 
 [content]
 {{ cms:date published_date, render: false, required: true }}
+{{ cms:categories topics }}
+{{ cms:categories types }}
 {{ cms:text_custom summary, render: false, required: true, max_length: '270' }}
 {{ cms:file file, render: false, required: true }}
+
 
 
 
@@ -28,7 +31,9 @@ position: 10
 
 
 
+
 [css]
+
 
 
 
