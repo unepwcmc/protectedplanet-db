@@ -2,7 +2,7 @@
 ---
 label: Page - Marine
 app_layout: application
-position: 6
+position: 5
 
 [content]
 {{ cms:text social-title, render: false }}
@@ -10,15 +10,13 @@ position: 6
 {{ cms:text summary, render: false, required: true }}
 {{ cms:text hero_small_text, render: false, required: true }}
 {{ cms:text hero_small_text_url, render: false, required: true }}
-{{ cms:file theme_image, render:false }}
+{{ cms:file image, render:false }}
 {{ cms:text section_distribution_title }}
 {{ cms:wysiwyg section_distribution_content }}
 {{ cms:text section_ocean_title }}
 {{ cms:wysiwyg section_ocean_content }}
 {{ cms:text section_coverage_title }}
 {{ cms:wysiwyg section_coverage_content }}
-{{ cms:text section_national_title }}
-{{ cms:wysiwyg section_national_content }}
 {{ cms:text section_size_title }}
 {{ cms:wysiwyg section_size_content }}
 {{ cms:text section_size_growth_title }}
@@ -26,7 +24,6 @@ position: 6
 {{ cms:text section_coverage_growth_title }}
 {{ cms:wysiwyg section_coverage_growth_content }}
 {{ cms:text section_coverage_growth_chart_title }}
-
 
 
 
@@ -47,9 +44,7 @@ position: 6
 
 
 
-
 [css]
-
 
 
 
