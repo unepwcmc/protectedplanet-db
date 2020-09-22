@@ -2,13 +2,14 @@
 ---
 label: Page - News and Stories
 app_layout: application
-position: 7
+position: 6
 
 [content]
 {{ cms:partial layouts/cms/news-and-stories }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
-{{ cms:file hero_image, render: false }}
+{{ cms:file image, render: false }}
+
 
 
 
@@ -36,7 +37,9 @@ position: 7
 
 
 
+
 [css]
+
 
 
 
