@@ -26,5 +26,8 @@ class CreateComfyCmsPageCategories < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    # Import custom cms categories listed in the config/locale/search/en.yml file
+    Rake::Task['cms_categories:import'].invoke
   end
 end
