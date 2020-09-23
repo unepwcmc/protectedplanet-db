@@ -87,6 +87,3 @@ CTAS.each do |key, hash|
   cta = CallToAction.find_by_css_class(hash[:css_class])
   cta || CallToAction.create(hash)
 end
-
-# Import custom cms categories listed in the config/locale/search/en.yml file
-Rake::Task['cms_categories:import'].invoke
