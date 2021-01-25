@@ -48,7 +48,7 @@ csv_models.each do |model|
       if model.create(attributes)
         import_count += 1
       else
-        failed_seevs << attributes
+        failed_seeds << attributes
       end
     end
 
