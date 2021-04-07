@@ -64,6 +64,7 @@ end
 # Import country statistics and PAME statistics
 Stats::CountryStatisticsImporter.import
 
+
 # Create Call To Actions CMS components
 CTAS = {
   api: {
@@ -82,8 +83,11 @@ CTAS = {
   }
 }.freeze
 
-CTAS.each do |key, hash|
-  puts "Creating #{key} CTA..."
-  cta = CallToAction.find_by_css_class(hash[:css_class])
-  cta || CallToAction.create(hash)
+# Presence of dummy CTAs interferes with WDPA release
+unless ENV['no_ctas']
+  CTAS.each do |key, hash|
+    puts "Creating #{key} CTA..."
+    cta = CallToAction.find_by_css_class(hash[:css_class])
+    cta || CallToAction.create(hash)
+  end
 end
