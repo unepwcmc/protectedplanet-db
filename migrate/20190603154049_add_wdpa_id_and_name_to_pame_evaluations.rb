@@ -1,4 +1,4 @@
-class AddWdpaIdAndNameToPameEvaluations < ActiveRecord::Migration
+class AddWdpaIdAndNameToPameEvaluations < ActiveRecord::Migration[4.2]
   def change
     add_column :pame_evaluations, :wdpa_id, :integer, default: 0, null: false
     add_column :pame_evaluations, :name, :string, default: "", null: false

@@ -1,4 +1,4 @@
-class CreateCountriesProtectedAreas < ActiveRecord::Migration
+class CreateCountriesProtectedAreas < ActiveRecord::Migration[4.2]
   def change
     create_table :countries_protected_areas, :id => false do |t|
       t.references :protected_area

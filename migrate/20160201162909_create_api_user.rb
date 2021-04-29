@@ -1,4 +1,4 @@
-class CreateApiUser < ActiveRecord::Migration
+class CreateApiUser < ActiveRecord::Migration[4.2]
   def change
     create_table :api_users do |t|
       t.string :token, index: true

@@ -1,4 +1,4 @@
-class CreateCountryStatistics < ActiveRecord::Migration
+class CreateCountryStatistics < ActiveRecord::Migration[4.2]
   def change
     create_table :country_statistics do |t|
       t.integer :country_id

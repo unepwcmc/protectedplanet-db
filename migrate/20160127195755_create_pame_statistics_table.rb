@@ -1,4 +1,4 @@
-class CreatePameStatisticsTable < ActiveRecord::Migration
+class CreatePameStatisticsTable < ActiveRecord::Migration[4.2]
   def change
     create_table :pame_statistics do |t|
       t.belongs_to :country

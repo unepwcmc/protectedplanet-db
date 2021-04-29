@@ -1,4 +1,4 @@
-class AddExtraFieldsToApiUsers < ActiveRecord::Migration
+class AddExtraFieldsToApiUsers < ActiveRecord::Migration[4.2]
   def change
     add_column :api_users, :kind, :text
     add_column :api_users, :has_licence, :text

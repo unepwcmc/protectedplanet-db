@@ -1,4 +1,4 @@
-class AddGeoCOlumnsToRegionalStatistic < ActiveRecord::Migration
+class AddGeoCOlumnsToRegionalStatistic < ActiveRecord::Migration[4.2]
   def change
     add_column :regional_statistics, :eez_area, :float
     add_column :regional_statistics, :ts_area, :float

@@ -1,4 +1,4 @@
-class CreatePameEvaluations < ActiveRecord::Migration
+class CreatePameEvaluations < ActiveRecord::Migration[4.2]
   def change
     create_table :pame_evaluations do |t|
       t.references :protected_area

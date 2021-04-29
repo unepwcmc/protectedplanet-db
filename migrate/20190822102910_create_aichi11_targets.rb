@@ -1,4 +1,4 @@
-class CreateAichi11Targets < ActiveRecord::Migration
+class CreateAichi11Targets < ActiveRecord::Migration[4.2]
   def change
     create_table :aichi11_targets do |t|
       t.integer :singleton_guard, default: 0, null: false

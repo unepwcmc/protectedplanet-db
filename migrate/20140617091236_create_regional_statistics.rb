@@ -1,4 +1,4 @@
-class CreateRegionalStatistics < ActiveRecord::Migration
+class CreateRegionalStatistics < ActiveRecord::Migration[4.2]
   def change
     create_table :regional_statistics do |t|
       t.integer :region_id
