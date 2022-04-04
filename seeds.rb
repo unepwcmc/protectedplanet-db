@@ -62,7 +62,7 @@ csv_models.each do |model|
 end
 
 # Import country statistics and PAME statistics
-Stats::CountryStatisticsImporter.import
+# Stats::CountryStatisticsImporter.import
 
 
 # Create Call To Actions CMS components
