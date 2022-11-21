@@ -1,4 +1,4 @@
-class AddPointsAndPolygonsToCountryStatistics < ActiveRecord::Migration[5.0]
+class AddPointsAndPolygonsToCountryStatistics < ActiveRecord::Migration
   def change
     add_column :country_statistics, :oecm_polygons, :integer
     add_column :country_statistics, :oecm_points, :integer
