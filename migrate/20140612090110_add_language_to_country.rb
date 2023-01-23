@@ -1,4 +1,4 @@
-class AddLanguageToCountry < ActiveRecord::Migration
+class AddLanguageToCountry < ActiveRecord::Migration[4.2]
   def change
     add_column :countries, :language, :string
   end

@@ -1,4 +1,4 @@
-class CreateLegacyProtectedAreas < ActiveRecord::Migration
+class CreateLegacyProtectedAreas < ActiveRecord::Migration[4.2]
   def change
     create_table :legacy_protected_areas do |t|
       t.integer :wdpa_id

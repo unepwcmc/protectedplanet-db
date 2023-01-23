@@ -1,4 +1,4 @@
-class MarkGreenlistSites < ActiveRecord::Migration
+class MarkGreenlistSites < ActiveRecord::Migration[4.2]
   def change
     sites = [
       # Asia Pacific

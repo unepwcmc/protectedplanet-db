@@ -1,4 +1,4 @@
-class CreateStoryMapLinks < ActiveRecord::Migration
+class CreateStoryMapLinks < ActiveRecord::Migration[4.2]
   def change
     create_table :story_map_links do |t|
       t.references :protected_area

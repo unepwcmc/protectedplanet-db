@@ -1,4 +1,4 @@
-class CreateHomeCarouselSlides < ActiveRecord::Migration
+class CreateHomeCarouselSlides < ActiveRecord::Migration[4.2]
 
   def change
     create_table :home_carousel_slides do |t|
