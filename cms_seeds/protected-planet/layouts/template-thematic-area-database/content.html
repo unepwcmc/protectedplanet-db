@@ -2,20 +2,23 @@
 ---
 label: Template - Thematic Area - Database
 app_layout: application
-position: 14
+position: 16
 
 [content]
+{{ cms:text short_title, render: false, required: true }}
 {{ cms:text summary, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
-{{ cms:file theme_image, render:false }}
+{{ cms:file image, render:false }}
+{{ cms:text button-download, render: false, required: true }}
+{{ cms:text button-search, render: false, required: true }}
 
 {{ cms:text tab-title-1, render: false }}
 {{ cms:text tab-title-2, render: false }}
 {{ cms:text tab-title-3, render: false }}
-{{ cms:text tab-content-1, render: false }}
-{{ cms:text tab-content-2, render: false }}
-{{ cms:text tab-content-3, render: false }}
+{{ cms:wysiwyg tab-content-1, render: false }}
+{{ cms:wysiwyg tab-content-2, render: false }}
+{{ cms:wysiwyg tab-content-3, render: false }}
 
 
 

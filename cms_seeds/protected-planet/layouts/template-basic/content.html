@@ -2,17 +2,18 @@
 ---
 label: Template - Basic
 app_layout: application
-position: 3
+position: 10
 
 [content]
 {{ cms:partial layouts/cms/basic }}
-{{ cms:date published_date, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
-{{ cms:categories topics }}
 {{ cms:text_custom summary, render: false, max_length: '167' }}
 {{ cms:file image, render: false }}
 {{ cms:wysiwyg content, render: false }}
+
+
+
 
 
 
@@ -37,7 +38,13 @@ position: 3
 
 
 
+
+
+
 [css]
+
+
+
 
 
 

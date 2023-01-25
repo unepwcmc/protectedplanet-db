@@ -2,18 +2,24 @@
 ---
 label: Template - News & Stories Article
 app_layout: application
-position: 15
+position: 11
 
 [content]
-{{ cms:partial layouts/cms/basic }}
-{{ cms:date published_date, render: false, required: true }}
+{{ cms:partial layouts/cms/news-and-stories-article }}
+{{ cms:date_not_null published_date, render: false, required: true }}
 {{ cms:text social-title, render: false }}
 {{ cms:text social-description, render: false }}
 {{ cms:categories topics }} 
-{{ cms:text_custom summary, render: false, required: true, max_length: '167' }}
-{{ cms:file image, render: false }}
+{{ cms:file image, render:false }}
+{{ cms:text_custom summary, render: false, required: true, max_length: '270' }}
 {{ cms:wysiwyg content, render: false }}
+
+
 [js]
 
+
+
 [css]
+
+
 
