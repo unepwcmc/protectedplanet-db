@@ -1,0 +1,47 @@
+[attributes]
+---
+label: Template - Resource
+app_layout: application
+position: 12
+
+[content]
+{{ cms:partial layouts/cms/resource }}
+{{ cms:date_not_null published_date, render: false, required: true }}
+{{ cms:text social-title, render: false }}
+{{ cms:text social-description, render: false }}
+{{ cms:categories topics }} 
+{{ cms:text_custom summary, render: false, required: true, max_length: '270' }}
+{{ cms:wysiwyg content, render: false }}
+{{ cms:text resource_link_text, render: false }}
+{{ cms:text resource_link_url, render: false }}
+{{ cms:text resource_file_title, render: false }}
+{{ cms:file resource_file, render: false }}
+
+
+
+
+
+
+
+
+
+
+[js]
+
+
+
+
+
+
+
+
+
+[css]
+
+
+
+
+
+
+
+

@@ -7,18 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 #
 
-
-# Import legacy protected areas
-###############################
-source = File.join(Rails.root, 'lib', 'data', 'seeds', 'legacy_protected_areas.sql')
-config = ActiveRecord::Base.connection_config
-command = []
-
-command << "PGPASSWORD=#{config[:password]}" if config[:password].present?
-command << %Q(psql -d #{config[:database]} -U #{config[:username]} -h #{config[:host]} < #{source.to_s})
-
-system(command.join(" "))
-
 # Import models
 ###############
 csv_models = [
@@ -60,7 +48,7 @@ csv_models.each do |model|
       if model.create(attributes)
         import_count += 1
       else
-        failed_seevs << attributes
+        failed_seeds << attributes
       end
     end
 
@@ -74,4 +62,32 @@ csv_models.each do |model|
 end
 
 # Import country statistics and PAME statistics
-Stats::CountryStatisticsImporter.import
+# Stats::CountryStatisticsImporter.import
+
+
+# Create Call To Actions CMS components
+CTAS = {
+  api: {
+    css_class: 'api',
+    title: 'API',
+    summary: 'API Summary',
+    url: 'https://api.protectedplanet.net',
+    updated: false
+  },
+  live_report: {
+    css_class: 'live-report',
+    title: 'Live Report',
+    summary: 'Live Report Summary',
+    url: 'https://livereport.protectedplanet.net',
+    updated: false
+  }
+}.freeze
+
+# Presence of dummy CTAs interferes with WDPA release
+unless ENV['no_ctas']
+  CTAS.each do |key, hash|
+    puts "Creating #{key} CTA..."
+    cta = CallToAction.find_by_css_class(hash[:css_class])
+    cta || CallToAction.create(hash)
+  end
+end

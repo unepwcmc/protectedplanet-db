@@ -1,4 +1,4 @@
-class CreatePameSources < ActiveRecord::Migration
+class CreatePameSources < ActiveRecord::Migration[4.2]
   def change
     create_table :pame_sources do |t|
       t.string :data_title

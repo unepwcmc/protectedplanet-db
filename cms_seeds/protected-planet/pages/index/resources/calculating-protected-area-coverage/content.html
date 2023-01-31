@@ -1,0 +1,99 @@
+[attributes]
+---
+label: Calculating protected and conserved area coverage
+layout: template-resource
+target_page: 
+categories:
+- Technical Resources
+- Training Resources
+- Updates & News
+is_published: true
+position: 7
+
+[categories topics]
+wdpa oecm
+[categories types]
+
+[file resource_file]
+
+[date_not_null published_date]
+2019-01-01 00:00:00 UTC
+[text social-title]
+
+
+
+[text social-description]
+
+
+
+[text_custom summary]
+How do we calculate the coverage of protected and conserved areas?
+
+
+[text resource_link_text]
+
+
+
+[text resource_link_url]
+
+
+
+[text resource_file_title]
+
+
+
+[wysiwyg content]
+<p>
+	When calculating protected area coverage at any scale there are four questions that will have a major influence in the final results:
+</p><p>
+	1) What is a protected area?
+</p><p>
+	2) What protected areas data is used?
+</p><p>
+	3) Which base map layer is used?
+</p><p>
+	4) Which method should I follow?
+</p><p>
+	The decisions made when responding to these questions will have an important influence in the final results. Therefore differences between the 
+	<a href="http://www.protectedplanet.net/">www.protectedplanet.net</a> national statistics and any other national statistics can be expected.
+</p><p>
+	<strong>UNEP-WCMC acknowledges these differences and works closely with countries and territories when the calculation in </strong><a href="http://www.protectedplanet.net/"><strong></strong></a><strong><a href="http://www.protectedplanet.net">www.protectedplanet.net</a></strong><strong> and national official statistics differ. The aim is that the data in the WDPA accurately reflects the protected area network of each country and territory</strong>
+</p><h2 id="What is a protected area?">1) What is a protected area?</h2><p>
+	UNEP-WCMC only use protected areas that meet the IUCN and CBD definitions of protected areas when calculating protected area coverage. For more information see this: 
+	<a href="http://www.biodiversitya-z.org/content/protected-area">http://www.biodiversitya-z.org/content/protected-area</a>
+</p><h2 id="What protected areas data is used?">2) What protected areas data is used?</h2><p>
+	UNEP-WCMC only uses points and polygons submitted to the World Database on Protected Areas. The majority of these sites are available for download at 
+	<a href="http://www.protectedplanet.net/">www.protectedplanet.net</a>. However,<strong> </strong>due to restrictions requested by the data providers, a small number of sites are not made publicly available, but are used in our analyses.
+</p><p>
+	UNEP-WCMC decides not to include all sites in the database for protected area coverage analyses. Proposed protected areas are excluded as are sites submitted as points with no reported area (more information is available in Section 4). Currently 
+	<a href="/c/world-database-on-protected-areas/internationally-designated-protected-areas/man-and-the-biosphere-reserves">UNESCO Man and Biosphere Reserves (MAB)</a> are excluded, on the basis that that the MAB sites currently in the WDPA include buffer and transition zones that in many cases are not protected areas. MAB Core areas are usually protected areas designated at a national level and are therefore generally accounted for in our calculation. UNEP-WCMC is working with the MAB Secretariat to have an accurate set of boundaries for the core areas to ensure the contribution of these sites is accurately reflected. .
+</p><h2 id="Which base map layer is used?">3) Which base map layer is used?</h2><p>
+	UNEP-WCMC use a dataset combining Exclusive Economic Zones (EEZ; VLIZ 2014) and terrestrial country boundaries (World Vector Shoreline, 3rd edition, National Geospatial-Intelligence Agency). A simplified version of this layer has been published at Nature Scientific Data journal (
+	<a href="http://dx.doi.org/10.1038/sdata.2016.7">Brooks et al. 2016</a>) and is available here: <a href="http://datadryad.org/resource/doi:10.5061/dryad.6gb90.2">http://datadryad.org/resource/doi:10.5061/dryad.6gb90.2</a>
+</p><p>
+	Every country or territory has its own detailed base layer which is used at a national level for calculations of area and other statistical requirements. By using a global data set to calculate national values there is an acknowledged potential for the results to differ slightly from those used at the national level. This will have an influence on the final protected area coverage for that country or territory.
+</p><p>
+	<strong>The designations employed and the presentation of materials and maps in </strong><a href="http://www.protectedplanet.net/"><strong></strong></a><strong><a href="http://www.protectedplanet.net">www.protectedplanet.net</a></strong><strong> do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.</strong>
+</p><h2 id="Method used to calculate protected area coverage">4) Method used to calculate national protected area coverage</h2><p>
+	This is a step by step guide on the method used to calculate national protected areas coverage in <a href="http://www.protectedplanet.net">www.protectedplanet.net</a>. National statistics split by regions are available <a href="/c/unep-regions">here</a>.
+</p><p>This methodology is designed to be run in ArcGIS, or preferably ArcGIS Pro. It is currently being run in Esri Modelbuilder.<br></p><ol><li> Start with the latest 
+	<a href="https://protectedplanet.net/c/world-database-on-protected-areas/monthly-updates">WDPA monthly release</a>. For the data that is currently on the country profile pages the latest WDPA monthly release is used.
+</li><li> Only sites with 
+	<i>Status</i> = <i>designated, inscribed, adopted and established</i> are included.
+</li><li>Only points with a 
+	<i>Reported Area</i> are included.
+</li><li>Sites with 
+	<i>Status</i> = <i>Proposed, Not Reported</i>; points with no reported area, and UNESCO Man and Biosphere Reserves (see reasons above in Section 2) are excluded.
+</li><li>A buffer is created around protected areas reported as points. The area of the buffer is = Reported Area. <strong><strong>There are important caveats associated with this method some of which are explored by <a href="https://www.researchgate.net/publication/250921290_Effects_of_Errors_and_Gaps_in_Spatial_Data_Sets_on_Assessment_of_Conservation_Progress_Errors_and_Gaps_in_Spatial_Data_Sets">Visconti et al. 2013</a>. Buffering points can underestimate or overestimate protected area coverage as the circles created around points might cover areas where protected areas do not exist (overestimation) or overlap with areas where other protected areas already exist (underestimation). It can also give inaccurate values for sites that are partly terrestrial and marine as the absence of boundaries make it difficult to predict which portion of a protected area is in the land or the sea.</strong></strong></li><li>All buffered point and polygons are combined into one single feature dataset.
+</li><li> The "Dissolve" tool in Arc GIS is used to eliminate overlaps between designations and avoid double counting. The field 
+	<i>ISO3</i> is kept to represent each country or territory. Transboundary sites will be allocated areas to different countries using our base map (see Section 3).</li><li> The dissolved output is intersected with the coast line (see Section 3 above). The intersected output has its area recalculated in the Mollweide projection and is  is used to calculate the protected area coverage of every country and territory. Marine and coastal area are those outlined in the Economic Exclusion Zones dataset (see section 3 above). Beyond 200 nautical miles is considered as Areas Beyond National Jurisdiction (ABNJ).
+</li><li> The terrestrial protected area coverage is calculated for each country or territory by dividing the total area of terrestrial protected areas by total terrestrial area of that country.
+</li><li>The marine and coastal protected area coverage is calculated for each country or territory by dividing the total marine and coastal area of protected areas by total marine and coastal area of that country.</li></ol><p><strong>To complete a successful analyses it is fundamental to check and repair geometry after every geoprocessing step, e.g. after every step which alters the geometry of the data. This is a simplified methodology, if you have any further questions please contact us at protectedareas@unep-wcmc.org.</strong></p><h2 id="5)Method used to calculate global protected area coverage">5) Method used to calculate global protected area coverage</h2><p>
+	This is a step by step guide on the method used to calculate global protected areas coverage in <a href="http://www.protectedplanet.net/">www.protectedplanet.net</a>.
+</p><p "="">This methodology is designed to be run in ArcGIS, or preferably ArcGIS Pro. It is currently being run in Esri Modelbuilder.</p><p "="">Update: November 2019: Please note that the WDPA team are working on creating Python scripts for calculating national, regional and global coverage and integrating this into a GitHub repository. A link to this repository will become available when a functioning script is ready for public use. A more comprehensive breakdown of the method and tools will be listed in the repository's wiki.</p><ol><li>Start with the latest <a href="/c/world-database-on-protected-areas/monthly-updates">WDPA monthly release</a>.
+</li><li>Only sites with <i>Status</i> = <i>designated, inscribed, and established</i> are included.
+</li><li>Only points with a <i>Reported Area</i> are included.
+</li><li>Sites with <i>Status</i> = <i>Proposed, Not Reported</i>; points with no reported area, and UNESCO Man and Biosphere Reserves (see reasons above in Section 2) are excluded.
+</li><li>A buffer is created around protected areas reported as points. The area of the buffer is = Reported Area.  <strong>There are important caveats associated with this method some of which are explored by <a href="https://www.researchgate.net/publication/250921290_Effects_of_Errors_and_Gaps_in_Spatial_Data_Sets_on_Assessment_of_Conservation_Progress_Errors_and_Gaps_in_Spatial_Data_Sets">Visconti et al. 2013</a>. Buffering points can underestimate or overestimate protected area coverage as the circles created around points might cover areas where protected areas do not exist (overestimation) or overlap with areas where other protected areas already exist (underestimation). It can also give inaccurate values for sites that are partly terrestrial and marine as the absence of boundaries make it difficult to predict which portion of a protected area is in the land or the sea.</strong></li><li> All buffered point and polygons are combined into one single feature dataset, the 'PolyBuffpnt' using the <a href="https://pro.arcgis.com/en/pro-app/tool-reference/data-management/merge.htm">Merge tool.</a></li><li> The <a href="http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/union.htm">Union tool</a> is used to split up the PolyBuffpnt like a Venn diagram, creating hundreds of thousands of self intersections.</li><li> A new text field is added, 'XYco' with the <a href="https://pro.arcgis.com/en/pro-app/tool-reference/data-management/add-field.htm">Add Field tool.</a></li><li> The centroid of each polygon is calculated with the <a href="http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/add-geometry-attributes.htm">Add Geometry Attributes tool</a>.</li><li> The XYco field is calculated concatenating the Xco and Yco using the <a href="https://pro.arcgis.com/en/pro-app/tool-reference/data-management/calculate-field.htm">Calculate Field tool.</a></li><li> A summary is run of XYco, counting the occurence of XYco. Identical XYco values will represent overlapping self intersections. Unique geometries will have unique XYcos (e.g. a count of 1).</li><li> From the PolyBuffpnt, polygons that have a XYco count &gt; 1 are selected out, as 'duplicates' using the <a href="http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/select.htm">Select tool.</a></li><li> From the PolyBuffpnt, polygons that have a XYco count = 1 are selected out as 'unique' using the <a href="http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/select.htm">Select tool.</a></li><li> The 'duplicates' are flattened using the <a href="https://pro.arcgis.com/en/pro-app/tool-reference/data-management/dissolve.htm">Dissolve tool</a>.</li><li> The dissolved duplicates are combined with the unique sites, named 'flat' with the <a href="https://pro.arcgis.com/en/pro-app/tool-reference/data-management/merge.htm">Merge tool.</a></li><li> The combined  flat layer is combined with a basemap of the world using the <a href="https://pro.arcgis.com/en/pro-app/tool-reference/analysis/intersect.htm">Intersect tool.</a></li><li> The intersected flat layer is converted to Mollweide, an equal area projection using the <a href="https://pro.arcgis.com/en/pro-app/tool-reference/data-management/project.htm">Project tool.</a></li><li> The area of each polygon is calculated, in km2 using the <a href="http://desktop.arcgis.com/en/arcmap/10.3/tools/data-management-toolbox/add-geometry-attributes.htm">Add Geometry Attributes tool</a>.</li><li> Area statistics are summarised by 'type' (e.g. land/marine) globally using the <a href="http://desktop.arcgis.com/en/arcmap/10.3/tools/analysis-toolbox/summary-statistics.htm">Summary Statistics tool</a>.</li><li> Final statistics are checked and formatted. The terrestrial protected area coverage is calculated by dividing the total area of terrestrial protected areas by total global terrestrial area excluding Antarctica. ABNJ area is calculated by just selecting areas that have an ISO3 = 'ABNJ'. Marine EEZ coverage is total global flat coverage - (ABNJ Area + Land Area).</li></ol><p "=""><strong><strong>To complete a successful analysis it is fundamental to repair geometry after every geoprocessing step, i.e. every step that alters the geometry of the data. This is a simplified methodology, if you have any further questions please contact us at protectedareas@unep-wcmc.org </strong></strong><br></p>
+
+
