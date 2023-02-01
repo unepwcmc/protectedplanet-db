@@ -1,4 +1,4 @@
-class CreateWikipediaSummaries < ActiveRecord::Migration
+class CreateWikipediaSummaries < ActiveRecord::Migration[4.2]
   def change
     create_table :wikipedia_summaries do |t|
       t.text :summary
