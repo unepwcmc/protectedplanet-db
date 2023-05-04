@@ -1,3 +1,7 @@
+### 1.2.0
+
+- Add additional fields to protected_area table: `marine_type`, `verif`, `parent_iso3`
+
 ### 1.1.0
 
 - Add additional geom count fields to country_statistics table
