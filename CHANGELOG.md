@@ -1,3 +1,7 @@
+### 1.3.0
+
+- Add additional fields to api_users table: :gdpr_consent, :gdpr_check_due
+
 ### 1.2.0
 
 - Add additional fields to protected_area table: `marine_type`, `verif`, `parent_iso3`
