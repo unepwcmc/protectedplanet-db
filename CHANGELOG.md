@@ -1,3 +1,10 @@
+### 1.4.0
+
+- Add protected_area_parcels table, It is a clone from protected_areas but without a few fields
+- Drop unused users table
+- Add :wdpa_pid to protected_areas table
+- Remove unused wikipedia related tables
+
 ### 1.3.0
 
 - Add additional fields to api_users table: :gdpr_consent, :gdpr_check_due
