@@ -11,7 +11,7 @@
 ###############
 csv_models = [
   Jurisdiction, Governance,
-  IucnCategory, Region, Country
+  IucnCategory, Region, Country, SubLocation
 ]
 
 csv_models.each do |model|
@@ -30,6 +30,19 @@ csv_models.each do |model|
       attributes = row.to_hash
       if model == Country
         attributes["region_id"] = Region.where(name: attributes.delete("region")).select(:id).first.id
+      end
+
+      if model == SubLocation
+        iso_code = attributes['iso']
+
+        unless iso_code.nil?
+          country_iso2 = iso_code.split('-').first
+          country_id = Country.where(iso: country_iso2).select(:id).first.id
+
+          unless country_id.nil?
+            attributes['country_id'] = country_id
+          end
+        end
       end
 
       if model.create(attributes)
