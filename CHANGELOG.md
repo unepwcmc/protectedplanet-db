@@ -1,3 +1,5 @@
+> **All protected planet projects in same place:** For Vscode users clone [ProtectedPlanet](https://github.com/unepwcmc/ProtectedPlanet) repo and use [protected-planet-family-apps.code-workspace](https://github.com/unepwcmc/ProtectedPlanet/blob/master/protected-planet-family-apps.code-workspace) to open all protected planet apps in the same workspace
+
 ### 1.4.0
 
 - Add protected_area_parcels table, It is a clone from protected_areas but without a few fields
