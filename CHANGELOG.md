@@ -1,4 +1,8 @@
-> **All protected planet projects in same place:** For Vscode users clone [ProtectedPlanet](https://github.com/unepwcmc/ProtectedPlanet) repo and use [protected-planet-family-apps.code-workspace](https://github.com/unepwcmc/ProtectedPlanet/blob/master/protected-planet-family-apps.code-workspace) to open all protected planet apps in the same workspace
+### 1.5.0
+
+- Remove legacy tables
+- Update PAME and GL schemas
+
 
 ### 1.4.0
 
