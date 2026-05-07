@@ -1,4 +1,4 @@
-class DropNetworksAndNetworksProtectedAreas < ActiveRecord::Migration[4.2]
+class DropNetworksAndNetworksProtectedAreas < ActiveRecord::Migration[5.2]
   def up
     drop_table :networks_protected_areas if table_exists?(:networks_protected_areas)
     drop_table :networks if table_exists?(:networks)
