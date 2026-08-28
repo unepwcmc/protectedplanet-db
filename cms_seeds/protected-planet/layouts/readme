@@ -1,1 +1,0 @@
-Consider to remove all CMS layout settings in this folder as they can be very easy to out of sync and only used in staging sync up task (programatically) probably not east to maintain

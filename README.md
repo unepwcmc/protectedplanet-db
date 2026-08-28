@@ -27,9 +27,3 @@ git submodule update --init --recursive
 
 ## Updating the database schema
 You can generate migrations in the normal way from the ProtectedPlanet project, e.g. ```bundle exec rails g migration my_new_migration```
-
-## CMS seeds
-
-The CMS seeds are used to export data from staging or production databases so they can be imported elsewhere, i.e. from staging to development environments, or from production to staging.
-
-Changes to the CMS seed files do not automatically affect the apps, only if they are imported using the ```rake 'comfy:cms_seeds:import``` and associated rake tasks in ProtectedPlanet. This should not be done on production, but can be done on staging if the staging CMS needs to mirror the production CMS.
