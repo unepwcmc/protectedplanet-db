@@ -31,6 +31,9 @@ class RenameComfyCmsBlocksToComfyCmsFragments < ActiveRecord::Migration[5.2]
       t.index [:is_published]
     end
 
-    Rake::Task['cms_update_2:update_cms_tags'].invoke
+    # The cms_update_2:update_cms_tags data migration that used to run here was a
+    # one-off rewrite of CMS v1 tag syntax in existing layouts/fragments. Removed in
+    # Sep 2026: every deployed database has already applied it, and on a from-scratch
+    # db:migrate (CI) the CMS tables are still empty, so it was a no-op.
   end
 end
