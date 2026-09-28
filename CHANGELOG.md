@@ -1,3 +1,8 @@
+### 1.6.0
+
+- Add high seas OECM coverage columns to global_statistics
+
+
 ### 1.5.0
 
 - Remove legacy tables
